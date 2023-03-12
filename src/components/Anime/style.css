@@ -1,0 +1,17 @@
+.anime {
+  text-align: center;
+  padding: 37px;
+}
+
+.anime h3 {
+  font-size: 32px;
+  border-bottom: 4px solid;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.personagens {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
