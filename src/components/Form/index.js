@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../Button";
 import DropdownList from "../DropdownList";
-import TextField from "../TextField";
+import Field from "../Field";
 import "./style.css";
 import { v4 as uuidv4 } from "uuid";
 
@@ -34,21 +34,21 @@ const Form = (props) => {
     <section className="form">
       <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do coleborador</h2>
-        <TextField
+        <Field
           valor={nome}
           obrigatorio
           label="Nome"
           placeholder="Digite o nome do colaborador"
           aoAlterado={(valor) => setNome(valor)}
         />
-        <TextField
+        <Field
           valor={cargo}
           obrigatorio
           label="Cargo"
           placeholder="Digite cargo do colaborador"
           aoAlterado={(valor) => setCargo(valor)}
         />
-        <TextField
+        <Field
           valor={imagem}
           obrigatorio
           label="Imagem"
@@ -73,14 +73,15 @@ const Form = (props) => {
         }}
       >
         <h2>Preencha os dados para criar um novo time.</h2>
-        <TextField
+        <Field
           valor={nomeTime}
           obrigatorio
           label="Nome"
           placeholder="Digite o nome do time"
           aoAlterado={(valor) => setNomeTime(valor)}
         />
-        <TextField
+        <Field
+          type="color"
           valor={corTime}
           obrigatorio
           label="Cor"
