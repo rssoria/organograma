@@ -1,4 +1,4 @@
-import Personagem from "../Personagem";
+import Colaborador from "../Colaborador";
 import "./style.css";
 
 const Time = (props) => {
@@ -9,7 +9,7 @@ const Time = (props) => {
         <h3 style={{ borderColor: corSecundaria }}>{nome}</h3>
         <div className="personagens">
           {personagens.map((personagem) => (
-            <Personagem
+            <Colaborador
               key={personagem.nome}
               nome={personagem.nome}
               genero={personagem.genero}
