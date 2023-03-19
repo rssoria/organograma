@@ -3,7 +3,7 @@ import Colaborador from "../Colaborador";
 import "./style.css";
 
 const Time = (props) => {
-  const { nome, cor, colaboradores, aoDeletar, mudarCor } = props;
+  const { id, nome, cor, colaboradores, aoDeletar, mudarCor } = props;
   return (
     colaboradores.length && (
       <section
@@ -14,13 +14,14 @@ const Time = (props) => {
           type="color"
           className="input-cor"
           value={cor}
-          onChange={(evento) => mudarCor(evento.target.value, nome)}
+          onChange={(evento) => mudarCor(evento.target.value, id)}
         />
         <h3 style={{ borderColor: cor }}>{nome}</h3>
         <div className="colaboradores">
           {colaboradores.map((colaborador) => (
             <Colaborador
-              key={colaborador.nome}
+              id={colaborador.id}
+              key={colaborador.id}
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}

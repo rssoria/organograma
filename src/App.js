@@ -4,12 +4,13 @@ import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import Titulo from "./components/Titulo";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [times, setTimes] = useState([
-    { nome: "Programação", cor: "#82CFFA" },
-    { nome: "Front-end", cor: "#A6D157" },
-    { nome: "Data Science", cor: "#E06B69" },
+    { nome: "Programação", cor: "#82CFFA", id: uuidv4() },
+    { nome: "Front-end", cor: "#A6D157", id: uuidv4() },
+    { nome: "Data Science", cor: "#E06B69", id: uuidv4() },
   ]);
   const [colaboradores, setColaboradores] = useState([]);
 
@@ -17,14 +18,16 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   };
 
-  const deletarColaborador = () => {
-    console.log("oi");
+  const deletarColaborador = (id) => {
+    setColaboradores(
+      colaboradores.filter((colaborador) => colaborador.id !== id)
+    );
   };
 
-  const mudarCorDoTime = (cor, nome) => {
+  const mudarCorDoTime = (cor, id) => {
     setTimes(
       times.map((time) => {
-        if (time.nome === nome) {
+        if (time.id === id) {
           time.cor = cor;
         }
         return time;
@@ -32,21 +35,25 @@ function App() {
     );
   };
 
+  const cadastrarTime = (novoTime) => {
+    setTimes([...times, { ...novoTime, id: uuidv4() }]);
+  };
+
   return (
     <div className="App">
       <Banner />
       <Form
-        aoColaboradorCadastrado={(colaborador) =>
-          aoNovoColaboradorAdicionado(colaborador)
-        }
+        cadastrarTime={cadastrarTime}
+        aoCadastrar={(colaborador) => aoNovoColaboradorAdicionado(colaborador)}
         times={times.map((time) => time.nome)}
       />
       <Titulo titulo="Minha organização:" />
       {times.map((time) => (
         <Time
-          key={time.nome}
+          key={time.id}
           nome={time.nome}
           cor={time.cor}
+          id={time.id}
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.time === time.nome
           )}
