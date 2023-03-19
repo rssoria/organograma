@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Anime from "./components/Anime";
+import Time from "./components/Time";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
@@ -26,7 +26,7 @@ function App() {
         animes={animes.map((anime) => anime.nome)}
       />
       {animes.map((anime) => (
-        <Anime
+        <Time
           key={anime.nome}
           nome={anime.nome}
           corPrimaria={anime.corPrimaria}
@@ -34,7 +34,7 @@ function App() {
           personagens={personagens.filter(
             (personagem) => personagem.anime === anime.nome
           )}
-        ></Anime>
+        ></Time>
       ))}
       <Footer />
     </div>
