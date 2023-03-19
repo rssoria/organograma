@@ -2,18 +2,18 @@ import Colaborador from "../Colaborador";
 import "./style.css";
 
 const Time = (props) => {
-  const { nome, corPrimaria, corSecundaria, personagens } = props;
+  const { nome, corPrimaria, corSecundaria, colaboradores } = props;
   return (
-    personagens.length && (
+    colaboradores.length && (
       <section className="time" style={{ backgroundColor: corPrimaria }}>
         <h3 style={{ borderColor: corSecundaria }}>{nome}</h3>
         <div className="personagens">
-          {personagens.map((personagem) => (
+          {colaboradores.map((colaborador) => (
             <Colaborador
-              key={personagem.nome}
-              nome={personagem.nome}
-              genero={personagem.genero}
-              imagem={personagem.imagem}
+              key={colaborador.nome}
+              nome={colaborador.nome}
+              cargo={colaborador.cargo}
+              imagem={colaborador.imagem}
               corDeFundo={corSecundaria}
             />
           ))}
