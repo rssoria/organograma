@@ -7,9 +7,9 @@ import Titulo from "./components/Titulo";
 
 function App() {
   const [times, setTimes] = useState([
-    { nome: "Programação", corPrimaria: "#E8FFFF", corSecundaria: "#82CFFA" },
-    { nome: "Front-end", corPrimaria: "#E9FFE3", corSecundaria: "#A6D157" },
-    { nome: "Data Science", corPrimaria: "#F16165", corSecundaria: "#E06B69" },
+    { nome: "Programação", cor: "#82CFFA" },
+    { nome: "Front-end", cor: "#A6D157" },
+    { nome: "Data Science", cor: "#E06B69" },
   ]);
   const [colaboradores, setColaboradores] = useState([]);
 
@@ -25,7 +25,7 @@ function App() {
     setTimes(
       times.map((time) => {
         if (time.nome === nome) {
-          time.corSecundaria = cor;
+          time.cor = cor;
         }
         return time;
       })
@@ -46,8 +46,7 @@ function App() {
         <Time
           key={time.nome}
           nome={time.nome}
-          corPrimaria={time.corPrimaria}
-          corSecundaria={time.corSecundaria}
+          cor={time.cor}
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.time === time.nome
           )}
