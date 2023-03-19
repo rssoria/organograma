@@ -23,6 +23,7 @@ const Form = (props) => {
       cargo,
       imagem,
       time,
+      favorito: false,
     });
     setNome("");
     setCargo("");

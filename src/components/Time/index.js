@@ -3,7 +3,8 @@ import Colaborador from "../Colaborador";
 import "./style.css";
 
 const Time = (props) => {
-  const { id, nome, cor, colaboradores, aoDeletar, mudarCor } = props;
+  const { id, nome, cor, colaboradores, aoDeletar, mudarCor, aoFavoritar } =
+    props;
   return (
     colaboradores.length && (
       <section
@@ -25,8 +26,10 @@ const Time = (props) => {
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}
+              favorito={colaborador.favorito}
               corDeFundo={cor}
               aoDeletar={aoDeletar}
+              aoFavoritar={aoFavoritar}
             />
           ))}
         </div>
