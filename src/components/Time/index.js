@@ -7,7 +7,7 @@ const Time = (props) => {
     colaboradores.length && (
       <section className="time" style={{ backgroundColor: corPrimaria }}>
         <h3 style={{ borderColor: corSecundaria }}>{nome}</h3>
-        <div className="personagens">
+        <div className="colaboradores">
           {colaboradores.map((colaborador) => (
             <Colaborador
               key={colaborador.nome}
