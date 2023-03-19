@@ -6,9 +6,9 @@ import Form from "./components/Form";
 
 function App() {
   const times = [
-    { nome: "Naruto", corPrimaria: "#dd865e", corSecundaria: "#dfd253" },
-    { nome: "Dragon Ball", corPrimaria: "#f7cb0a", corSecundaria: "#f71320" },
-    { nome: "One Piece", corPrimaria: "#4dc1dd", corSecundaria: "#6f1e1b" },
+    { nome: "Programação", corPrimaria: "#E8FFFF", corSecundaria: "#82CFFA" },
+    { nome: "Front-end", corPrimaria: "#E9FFE3", corSecundaria: "#A6D157" },
+    { nome: "Data Science", corPrimaria: "#F16165", corSecundaria: "#E06B69" },
   ];
   const [colaboradores, setColaboradores] = useState([]);
 

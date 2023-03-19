@@ -10,7 +10,7 @@
   padding-bottom: 8px;
 }
 
-.personagens {
+.colaboradores {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
